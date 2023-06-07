@@ -64,15 +64,17 @@ class TasksFragment: Fragment(R.layout.fragment_tasks) {
                 // Handle the menu selection
                 return when (menuItem.itemId) {
                     R.id.action_sort_by_name -> {
-
+                        viewModel.sortOrder.value= SortOrder.BY_NAME
                         true
                     }
                     R.id.action_sort_by_date_created -> {
 
+                        viewModel.sortOrder.value= SortOrder.BY_DATE
                         true
                     }
                     R.id.action_hide_completed_tasks -> {
                         menuItem.isChecked=!menuItem.isChecked
+                        viewModel.hideCompleted.value=menuItem.isChecked
 
                         true
                     }
