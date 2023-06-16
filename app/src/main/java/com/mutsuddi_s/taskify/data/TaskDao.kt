@@ -1,7 +1,7 @@
 package com.mutsuddi_s.taskify.data
 
 import androidx.room.*
-import com.mutsuddi_s.taskify.ui.tasks.SortOrder
+
 import kotlinx.coroutines.flow.Flow
 
 @Dao

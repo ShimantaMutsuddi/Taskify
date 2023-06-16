@@ -79,6 +79,10 @@ dependencies {
     // Dagger Hilt
     implementation "com.google.dagger:hilt-android:$hiltVersion"
     kapt "com.google.dagger:hilt-android-compiler:$hiltVersion"
+
+    //jetpack datastore
+    //implementation("androidx.datastore:datastore-preferences:1.0.0")
+    implementation "androidx.preference:preference-ktx:1.2.0"
     //implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hiltAndroidXVersion"
    // kapt "androidx.hilt:hilt-compiler:$hiltAndroidXVersion"
 
