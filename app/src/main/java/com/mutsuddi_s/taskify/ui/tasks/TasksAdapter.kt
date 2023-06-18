@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.mutsuddi_s.taskify.data.Task
 import com.mutsuddi_s.taskify.databinding.ItemTaskBinding
-//private val listener: OnItemClickListener
-class TasksAdapter() : ListAdapter<Task, TasksAdapter.TasksViewHolder>(DiffCallback()) {
+
+class TasksAdapter(private val listener: OnItemClickListener) : ListAdapter<Task, TasksAdapter.TasksViewHolder>(DiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TasksViewHolder {
         val binding = ItemTaskBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -23,7 +23,7 @@ class TasksAdapter() : ListAdapter<Task, TasksAdapter.TasksViewHolder>(DiffCallb
 
     inner class TasksViewHolder(private val binding: ItemTaskBinding) : RecyclerView.ViewHolder(binding.root) {
 
-      /*  init {
+        init {
             binding.apply {
                 root.setOnClickListener {
                     val position = adapterPosition
@@ -40,7 +40,7 @@ class TasksAdapter() : ListAdapter<Task, TasksAdapter.TasksViewHolder>(DiffCallb
                     }
                 }
             }
-        }*/
+        }
 
         fun bind(task: Task) {
             binding.apply {
@@ -52,10 +52,10 @@ class TasksAdapter() : ListAdapter<Task, TasksAdapter.TasksViewHolder>(DiffCallb
         }
     }
 
-   /* interface OnItemClickListener {
+    interface OnItemClickListener {
         fun onItemClick(task: Task)
         fun onCheckBoxClick(task: Task, isChecked: Boolean)
-    }*/
+    }
 
     class DiffCallback : DiffUtil.ItemCallback<Task>() {
         override fun areItemsTheSame(oldItem: Task, newItem: Task) =
